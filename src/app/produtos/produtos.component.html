@@ -1,0 +1,6 @@
+<h3>Produtos</h3>
+<ul class="list-group">
+  <li *ngFor="let produto of produtos" class="list-group-item" (click)="selecionarProduto(produto)">
+    {{ produto }}
+  </li>
+</ul>
