@@ -1,4 +1,4 @@
-import { Component,Output, EventEmitter } from '@angular/core';
+import { Component,Output,Input, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 
 @Component({
@@ -10,11 +10,12 @@ import { CommonModule } from '@angular/common';
 })
 export class ProdutosComponent {
   produtos = ['Pica-Pau', 'Irmão do Jorel', ' Incrivel mundo de G', 'Jovens titans'];
-
-  @Output() produtoSelecionado = new EventEmitter<string>();
+  @Input() produtoslist: string[] = [];
+  @Output() eventoProd = new EventEmitter<string>();
 
   selecionarProduto(produto: string) {
-    this.produtoSelecionado.emit(produto);
+    this.eventoProd.emit(`Produto Selecionado: ${produto}`);
   }
+
 
 }
