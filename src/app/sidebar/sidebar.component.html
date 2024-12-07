@@ -1,10 +1,6 @@
-<div class="sidebar bg-light p-3">
-    <h4>Categorias</h4>
-    <ul class="list-group">
-      <li class="list-group-item">Ação</li>
-      <li class="list-group-item">Comédia</li>
-      <li class="list-group-item">Aventura</li>
-      <li class="list-group-item">Infantil</li>
-    </ul>
-  </div>
-  
+<aside class="bg-light p-3" style="width: 250px;">
+  <h4>Menu</h4>
+  <ul class="list-unstyled">
+    <li *ngFor="let item of menuItems">{{ item }}</li>
+  </ul>
+</aside>

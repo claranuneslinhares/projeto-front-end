@@ -1,0 +1,27 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #6c757d; 
+    color: white;
+  }
+  
+  button {
+    background-color: #007bff; 
+    border: none;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .alert {
+    &.alert-info {
+      background-color: #cce5ff; 
+      color: #007bff; }
+  
+    &.alert-warning {
+      background-color: #d6d8db; 
+      color: #6c757d; }
+  }
+  

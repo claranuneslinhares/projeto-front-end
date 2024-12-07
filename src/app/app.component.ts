@@ -18,9 +18,9 @@ import { FooterComponent } from "./footer/footer.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'projeto-front-end';
+  title = 'Mundo dos desenhos';
 
-  produtos = ['Pica-Pau', 'Irmão do Jorel', ' Incrivel mundo de G', 'Jovens titans'];
+  produtos = ['Pica-Pau', 'Irmão do Jorel', ' Incrivel mundo de Gumball', 'Jovens titans'];
   mostrarMensagem = true;
   mensagem = "Mensagem do Componente Pai";
   receberEvento(mensagem: string) {
