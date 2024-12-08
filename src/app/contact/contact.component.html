@@ -1,21 +1,34 @@
-<div class="contact-section mt-4">
-    <h3>Contato</h3>
-    <p>Entre em contato conosco para mais informações sobre nossos produtos e desenhos animados.</p>
-    <form>
-      <div class="form-group">
-        <label for="name">Nome</label>
-        <input type="text" class="form-control" id="name" placeholder="Digite seu nome">
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Digite seu email">
-      </div>
-      <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
+<form>
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input
+      type="text"
+      id="nome"
+      [(ngModel)]="nome"
+      class="form-control"
+      placeholder="Digite seu nome"
+    />
   </div>
-  <div>
-    <p>{{ mensagem }}</p>
-    <button (click)="enviarMensagem()" class="btn btn-success">Enviar Mensagem</button>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      [(ngModel)]="email"
+      class="form-control"
+      placeholder="Digite seu email"
+    />
   </div>
-  
-  
+  <div class="form-group">
+    <label for="mensagem">Mensagem</label>
+    <textarea
+      id="mensagem"
+      [(ngModel)]="mensagem"
+      class="form-control"
+      placeholder="Digite sua mensagem"
+    ></textarea>
+  </div>
+  <button type="button" (click)="enviarMensagem()" class="btn btn-primary mt-3">
+    Enviar Mensagem
+  </button>
+</form>

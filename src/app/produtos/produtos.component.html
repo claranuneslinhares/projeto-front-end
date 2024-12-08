@@ -1,6 +1,18 @@
-<h3>Produtos</h3>
-<ul class="list-group">
-  <li *ngFor="let produto of produtos" class="list-group-item" (click)="selecionarProduto(produto)">
-    {{ produto }}
-  </li>
-</ul>
+<h2 class="text-center">{{ mensagem }}</h2> 
+<div class="row">
+  <div class="col-md-3" *ngFor="let produto of produtoslist">
+    <div class="card">
+      <img
+        [src]="'assets/' + produto.nome.toLowerCase() + '.jpg'" 
+        class="card-img-top"
+        [alt]="produto.nome" 
+      />
+      <div class="card-body text-center">
+        <h5 class="card-title">{{ produto.nome }}</h5> 
+        <button (click)="abrirLink(produto.link)" class="btn btn-primary"> 
+          Assistir no YouTube
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

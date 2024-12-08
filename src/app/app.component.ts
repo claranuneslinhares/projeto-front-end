@@ -8,8 +8,6 @@ import { HeaderComponent } from "./header/header.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
 import { FooterComponent } from "./footer/footer.component";
 
-
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -18,16 +16,25 @@ import { FooterComponent } from "./footer/footer.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Mundo dos desenhos';
-
-  produtos = ['Pica-Pau', 'Irmão do Jorel', ' Incrivel mundo de Gumball', 'Jovens titans'];
-  mostrarMensagem = true;
-  mensagem = "Mensagem do Componente Pai";
-  receberEvento(mensagem: string) {
-    console.log(mensagem);
-    this.mensagem = mensagem;
-
-
-  }
+  mensagem!: string;
+mostrarMensagem: any;
+receberEvento($event: string) {
+throw new Error('Method not implemented.');
 }
+  title = 'Mundo dos desenhos';
+  produtos = [
+    { nome: 'Pica-Pau', link: 'https://youtu.be/ML5NbVeJuLA'},
+    { nome: 'Irmão do jorel', link: 'https://youtu.be/cReHy_vzXXQ' },
+    { nome: 'Incrivel mundo de Gumball', link: 'https://youtu.be/IAWDCgc3SPE' },
+    { nome: 'Jovens Titãs', link: 'https://youtu.be/V3gZK0-7CQ0' }
+  ];
+
+  mensagemProdutos = 'Confira nossos desenhos animados favoritos!';
+  abrirLink(link: string) {
+    console.log('Redirecionando para:', link);
+  }  
+}
+
+  
+
 

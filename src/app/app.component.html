@@ -1,35 +1,22 @@
-<div class="container-fluid">
-  <app-header></app-header>
-  <div class="container-fluid" style="background-color: #6c757d; color: white;">
-    <!-- Conteúdo -->
-  </div>
-  <div class="row mt-3">
-    <div class="col-md-3">
-      <app-sidebar></app-sidebar>
-    </div>
 
-    <div class="col-md-9">
+  <div class="container-fluid">
+      <div class="container-fluid" style="background-color: #6c757d; color: white;">
+      <app-header></app-header>
       <app-body></app-body>
+      <div class="row mt-3">
+        <app-produtos
+        [produtos]="produtos"
+        [mensagem]="mensagemProdutos"
+        (eventoProd)="abrirLink($event)"
+      ></app-produtos>
+      
+      <app-contact></app-contact>
+      <div *ngIf="mostrarMensagem; else noMessage" class="text-center mt-3">
+        <p class="alert alert-info">Mensagem Visível!</p>
+      </div>
+      <ng-template #noMessage>
+        <p class="alert alert-warning text-center">Nenhuma Mensagem</p>
+      </ng-template>
     </div>
-  </div>
-
-  <div class="mt-4">
-    <app-produtos [produtoslist]="produtos" (eventoProd)="receberEvento($event)"></app-produtos>
-    <app-contact [mensagem]="mensagem" (eventoContato)="receberEvento($event)"></app-contact>
-  </div>
-
-  <div class="d-flex justify-content-center mt-4">
-    <button (click)="mostrarMensagem = !mostrarMensagem" class="btn btn-primary">
-      {{ mostrarMensagem ? 'Esconder' : 'Mostrar' }} Mensagem
-    </button>
-  </div>
-  <div *ngIf="mostrarMensagem; else noMessage" class="text-center mt-3">
-    <p class="alert alert-info">Mensagem Visível!</p>
-  </div>
-  <ng-template #noMessage>
-    <p class="alert alert-warning text-center">Nenhuma Mensagem</p>
-  </ng-template>
-</div>
-
-<button class="btn btn-primary">Botão Azul</button>
-<div class="alert alert-secondary">Alerta Cinza</div>
+    
+<app-footer></app-footer>
