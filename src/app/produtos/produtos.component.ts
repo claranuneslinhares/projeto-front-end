@@ -15,7 +15,6 @@ export class ProdutosComponent {
   
   produtos = ['Pica-Pau', 'Irmão do Jorel', ' Incrivel mundo de G', 'Jovens titans'];
   @Input() produtoslist: { nome: string; link: string }[] = [];
-  @Input() mensagem!: string;
   @Output() eventoProd = new EventEmitter<string>();
     abrirLink(link: string) {
       this.eventoProd.emit(link);
