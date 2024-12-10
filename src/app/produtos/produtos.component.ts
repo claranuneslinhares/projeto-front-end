@@ -9,8 +9,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './produtos.component.css'
 })
 export class ProdutosComponent {
+  selecionarProduto(produto: string) {
+    this.eventoProd.emit(`Produto Selecionado: ${produto}`);
+  }
+  
   produtos = ['Pica-Pau', 'Irmão do Jorel', ' Incrivel mundo de G', 'Jovens titans'];
-  @Input() produtoslist: { nome: string, link: string }[] = [];
+  @Input() produtoslist: { nome: string; link: string }[] = [];
   @Input() mensagem!: string;
   @Output() eventoProd = new EventEmitter<string>();
     abrirLink(link: string) {

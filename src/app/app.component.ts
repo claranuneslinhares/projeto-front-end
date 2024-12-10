@@ -18,8 +18,9 @@ import { FooterComponent } from "./footer/footer.component";
 export class AppComponent {
   mensagem!: string;
 mostrarMensagem: any;
-receberEvento($event: string) {
-throw new Error('Method not implemented.');
+receberEvento(mensagem: string) {
+  this.mensagem = mensagem;
+  console.log(mensagem); 
 }
   title = 'Mundo dos desenhos';
   produtos = [
@@ -28,9 +29,8 @@ throw new Error('Method not implemented.');
     { nome: 'Incrivel mundo de Gumball', link: 'https://youtu.be/IAWDCgc3SPE' },
     { nome: 'Jovens Titãs', link: 'https://youtu.be/V3gZK0-7CQ0' }
   ];
-
-  mensagemProdutos = 'Confira nossos desenhos animados favoritos!';
-  abrirLink(link: string) {
+mensagemProdutos = 'Confira nossos desenhos animados favoritos!';
+abrirLink(link: string) {
     console.log('Redirecionando para:', link);
   }  
 }

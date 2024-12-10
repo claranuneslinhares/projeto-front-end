@@ -1,15 +1,10 @@
-
-  <div class="container-fluid">
-      <div class="container-fluid" style="background-color: #6c757d; color: white;">
+<div class="container-fluid">
+  <div class="container-fluid" style="background-color: #6c757d; color: white;">
       <app-header></app-header>
+      <app-sidebar></app-sidebar>
       <app-body></app-body>
       <div class="row mt-3">
-        <app-produtos
-        [produtos]="produtos"
-        [mensagem]="mensagemProdutos"
-        (eventoProd)="abrirLink($event)"
-      ></app-produtos>
-      
+        <app-produtos [produtoslist]="produtos" (eventoProd)="receberEvento($event)"></app-produtos>
       <app-contact></app-contact>
       <div *ngIf="mostrarMensagem; else noMessage" class="text-center mt-3">
         <p class="alert alert-info">Mensagem Visível!</p>
@@ -17,6 +12,5 @@
       <ng-template #noMessage>
         <p class="alert alert-warning text-center">Nenhuma Mensagem</p>
       </ng-template>
-    </div>
-    
+    </div>   
 <app-footer></app-footer>
